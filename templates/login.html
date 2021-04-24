@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Thoughtful</title>
+    
+    <style>
+        body{
+            background-image:url("{{url_for('static',filename='image.png')}}");
+            background-size: 100%;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <div class="container-fluid">
+    <a href="{{ url_for('index') }}" style="text-decoration:none; color: black;"><center><h1 class="display-2">THOUGHTFUL</h1></center></a>
+    <br><br>
+    
+    <form method="POST" name="thoughful" enctype="multipart/form-data">
+        <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+                <div class="form-group">
+                  <label for="Email">Email address</label>
+                  <input style="color: black; background-color: transparent; border: 0.01cm black solid;" type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="Password">Password</label>
+                  <input style="color: black; background-color: transparent; border: 0.01cm black solid;" type="password" class="form-control" id="Password" placeholder="Password">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="checkbox" onclick="myFunction()" class="form-check-input" id="show_pass">
+                  <label class="form-check-label" for="show_passowrd">Show Password</label>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <a href="{{ url_for('login') }}"><center><button type="button" id="login" class="btn btn-outline-dark btn-block">LOGIN</button></center></a>
+              </div>
+              <div class="col">
+                <a href="{{ url_for('register') }}"><center><button type="button" id="register" class="btn btn-outline-dark btn-block">REGISTER</button></center></a>
+              </div>
+              </div>
+              </form>
+        </div>      
+
+        
+        <div class="col"></div>
+    </div>
+    </div> 
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("Password");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      } 
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</body>
+</html>
